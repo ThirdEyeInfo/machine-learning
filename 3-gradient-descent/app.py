@@ -38,7 +38,7 @@ def predict_using_sklean(df):
     plt.xlabel('Math')
     plt.ylabel('Computer Science')
     plt.scatter(df.math, df.sc)
-    plt.f
+    # plt.f
 
     return r.coef_, r.intercept_
 
