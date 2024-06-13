@@ -49,6 +49,8 @@ plt.show()
 X = X[:,1:]
 
 reg.fit(X, y)
+print(reg.score(X, y))
+
 res = reg.predict([[0, 0, 25000, 5],[0, 0, 50000, 5], [0, 0, 35000, 5]])
 print("Audi A5")
 print(res)

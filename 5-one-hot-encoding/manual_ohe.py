@@ -11,11 +11,22 @@ merged = merged.drop(['Car Model','Mercedez Benz C class'], axis='columns')
 X = merged.drop(['Sell Price($)'], axis='columns')
 y = merged['Sell Price($)']
 
-merged.plot.scatter(x='Sell Price($)', y='Mileage', s=100, c='r')
-merged.plot.scatter(x='Sell Price($)', y='Age(yrs)', s=100, c='b')
+merged.plot.scatter(x='Mileage', y='Sell Price($)', s=100, c='r')
+merged.plot.scatter(x='Age(yrs)', y='Sell Price($)', s=100, c='b')
 plt.show()
 
 reg = LinearRegression()
-reg.fit(X, y)
-print(reg.score(X, y))
-print(reg.predict([[35000, 5, True, False]]))
+reg.fit(X.values, y.values)
+print(reg.score(X.values, y.values))
+
+res = reg.predict([[25000, 5, True, False], [50000, 5, True, False], [35000, 5, True, False]])
+print("Audi A5")
+print(res)
+
+res = reg.predict([[25000, 5, False, False], [50000, 5, False, False], [35000, 5, False, False]])
+print("Mercedez Benz C class")
+print(res)
+
+res = reg.predict([[25000, 5, False, True], [50000, 5, False, True], [35000, 5, False, True]])
+print("BMW X5")
+print(res)
