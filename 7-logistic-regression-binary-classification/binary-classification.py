@@ -17,8 +17,8 @@ reg.fit(X_train, y_train)
 reg.score(X_test, y_test)
 
 res = reg.predict(X_test)
-print(res)
-print(y_test)
+print("Predicted result: ", res)
+print("Actual result: ", y_test)
 """-----------------------------------Data Visualization---------------------------------------"""
 def sortArray(arr):
     arr = np.array(arr).flatten()
